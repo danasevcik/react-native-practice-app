@@ -10,8 +10,12 @@ export default class App extends Component {
 
   componentDidMount() {
     //fetch photos
-    
-
+    fetch('http://localhost:3000/photos')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data.photos.length);
+      this.setState({photos: data.photos})
+    })
   }
 
   render() {

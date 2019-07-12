@@ -5,10 +5,10 @@ import Card from './Card'
 export default class Container extends Component {
 
   getPhotos = () => {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.photos.length > 0) {
-      console.log(this.props.photos);
       return <Card photo={this.props.photos[0]} />
+      // console.log(this.props.photos);
     //   this.props.photos.map(photo => {
     //     return <Card photo={photo} />
     //   })
@@ -16,6 +16,7 @@ export default class Container extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <Text style={{color: 'white'}}>THIS IS CONTAINER</Text>
