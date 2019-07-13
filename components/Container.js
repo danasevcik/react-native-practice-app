@@ -4,18 +4,7 @@ import Card from './Card'
 
 export default class Container extends Component {
 
-  getPhotos = () => {
-    console.log('in get photos');
-    let cards = this.props.photos.map(photo => {
-      console.log(photo);
-      return <Card photo={photo} />
-    })
-    return cards
-  }
-
   render() {
-    console.log(this.props);
-    {(!!this.props.photos) && this.getPhotos()}
     return (
       <View style={styles.container}>
         <Text style={{color: 'white'}}>THIS IS CONTAINER</Text>
@@ -25,13 +14,16 @@ export default class Container extends Component {
         <Text style={{color: 'green'}}>green</Text>
         <Text style={{color: 'blue'}}>blue</Text>
         <Text style={{color: 'purple'}}>purple</Text>
-        {this.props.photos && <Card photo={this.props.photos[0]} />}
+        {this.props.photos &&
+          this.props.photos.map(photo => {
+            console.log(photo);
+            return <Card photo={photo}/>
+          })
+        }
       </View>
     );
   }
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
