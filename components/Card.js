@@ -7,8 +7,7 @@ export default class Card extends Component {
     console.log('in card', this.props);
     return (
       <View style={styles.container}>
-        <Text style={{color: 'white'}}>THIS IS A CARD</Text>
-        <Image source={{uri: this.props.photo, width: 100, height: 100}} />
+        <Image source={{uri: this.props.photo, width: 410, height: 410}} />
       </View>
     );
   }
@@ -19,8 +18,9 @@ export default class Card extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: 'hotpink',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: '1%'
   },
 });

@@ -17,13 +17,7 @@ export default class App extends Component {
     console.log('here');
     return (
       <View style={styles.container}>
-        <Text style={{color: 'white', marginTop: '6%'}}>THIS IS APP</Text>
-        <Text style={{color: 'red'}}>red</Text>
-        <Text style={{color: 'orange'}}>orange</Text>
-        <Text style={{color: 'yellow'}}>yellow</Text>
-        <Text style={{color: 'green'}}>green</Text>
-        <Text style={{color: 'blue'}}>blue</Text>
-        <Text style={{color: 'purple'}}>purple</Text>
+        <Text style={{color: 'white', marginTop: '6%'}}>Dana's Photos</Text>
         <Container photos={this.state.photos}/>
 
       </View>
@@ -35,7 +29,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: 'hotpink',
     alignItems: 'center',
     justifyContent: 'center',
   },
