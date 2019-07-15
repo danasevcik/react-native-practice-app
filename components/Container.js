@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button, Alert } from 'react-native';
 import Card from './Card'
 
 export default class Container extends Component {
@@ -11,7 +11,9 @@ export default class Container extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button title="PRACTICE" color="#841584" accessibilityLabel="Learn more about this purple button"/>
+        <Button title="PRACTICE" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
+            Alert.alert('You tapped the button!');
+        }}/>
         <ScrollView>
           {this.props.photos &&
             this.props.photos.map(photo => {

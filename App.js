@@ -19,7 +19,6 @@ export default class App extends Component {
       <View style={styles.container}>
         <Text style={{color: 'white', marginTop: '6%'}}>Dana's Photos</Text>
         <Container photos={this.state.photos}/>
-
       </View>
     );
 
