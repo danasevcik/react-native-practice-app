@@ -11,7 +11,7 @@ export default class Container extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button title="PRACTICE"/>
+        <Button title="PRACTICE" color="#841584" accessibilityLabel="Learn more about this purple button"/>
         <ScrollView>
           {this.props.photos &&
             this.props.photos.map(photo => {
