@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, Button, Alert } from 'react-native';
 import Card from './Card'
+import NewComponent from './NewComponent'
 
 export default class Container extends Component {
 
   state = {
+    click: false
+  }
 
+  handleClick = () => {
+    console.log('in handle click');
+    this.setState({click: !this.state.click})
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Button title="PRACTICE" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
+        <Button title="SHOW SPONGEBOB" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
             Alert.alert('You tapped the button!');
+            this.handleClick()
+            console.log('here');
         }}/>
         <ScrollView>
           {this.props.photos &&
@@ -22,6 +30,7 @@ export default class Container extends Component {
             })
           }
         </ScrollView>
+        {this.state.click ? <NewComponent photo={'https://vignette.wikia.nocookie.net/spongebob/images/d/d7/SpongeBob_stock_art.png/revision/latest?cb=20190604110949'}/> : null}
       </View>
     );
   }
