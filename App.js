@@ -14,7 +14,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log('here');
     return (
       <View style={styles.container}>
         <Text style={{color: 'white', marginTop: '6%'}}>Dana's Photos</Text>

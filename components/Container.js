@@ -10,7 +10,6 @@ export default class Container extends Component {
   }
 
   handleClick = () => {
-    console.log('in handle click');
     this.setState({click: !this.state.click})
   }
 
@@ -18,16 +17,14 @@ export default class Container extends Component {
     return (
       <View style={styles.container}>
         {this.state.click ?
-          <Button title="HIDE SPONGEBOB" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
+          <Button title="HIDE SPONGEBOB" color="#841584" accessibilityLabel="Click to hide spongebob" onPress={() => {
               Alert.alert('BYE!');
               this.handleClick()
-              console.log('here');
             }}/>
           :
-          <Button title="CLICK ME" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
+          <Button title="CLICK ME" color="#841584" accessibilityLabel="Click to show spongebob" onPress={() => {
               Alert.alert('Look who it is!');
               this.handleClick()
-              console.log('here');
             }}/>
 
         }
@@ -51,5 +48,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'hotpink',
     height: '100%',
     width: '100%'
+  },
+});
+
+const buttonStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    color: 'green'
   },
 });
