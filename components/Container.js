@@ -17,11 +17,20 @@ export default class Container extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button title="SHOW SPONGEBOB" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
-            Alert.alert('You tapped the button!');
-            this.handleClick()
-            console.log('here');
-        }}/>
+        {this.state.click ?
+          <Button title="HIDE SPONGEBOB" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
+              Alert.alert('BYE!');
+              this.handleClick()
+              console.log('here');
+            }}/>
+          :
+          <Button title="CLICK ME" color="#841584" accessibilityLabel="Learn more about this purple button" onPress={() => {
+              Alert.alert('Look who it is!');
+              this.handleClick()
+              console.log('here');
+            }}/>
+
+        }
         <ScrollView>
           {this.props.photos &&
             this.props.photos.map(photo => {
