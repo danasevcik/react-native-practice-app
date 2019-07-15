@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
 import Card from './Card'
 
 export default class Container extends Component {
 
+  state = {
+
+  }
+
   render() {
     return (
-      <ScrollView style={styles.container}>
-        {this.props.photos &&
-          this.props.photos.map(photo => {
-            console.log(photo);
-            return <Card photo={photo}/>
-          })
-        }
-      </ScrollView>
+      <View style={styles.container}>
+        <Button title="PRACTICE"/>
+        <ScrollView>
+          {this.props.photos &&
+            this.props.photos.map(photo => {
+              console.log(photo);
+              return <Card photo={photo}/>
+            })
+          }
+        </ScrollView>
+      </View>
     );
   }
 }
