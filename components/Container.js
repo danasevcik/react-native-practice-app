@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Button, Alert, FlatList, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button, Alert, FlatList, TextInput, TouchableHighlight } from 'react-native';
 import Card from './Card'
 import NewComponent from './NewComponent'
 
@@ -7,7 +7,8 @@ export default class Container extends Component {
 
   state = {
     click: false,
-    text: "Start Typing..."
+    text: "Start Typing...",
+    username: "Username"
   }
 
   handleClick = () => {
@@ -29,6 +30,7 @@ export default class Container extends Component {
             }}/>
         }
         <TextInput style={{height: 40, borderColor: 'black', borderWidth: 1, margin: 10, padding: 5}} value={this.state.text} onChangeText={(text) => this.setState({text})}></TextInput>
+        <TextInput style={{height: 20, borderColor: 'black', borderWidth: 1, margin: 20, padding: 3}} value={this.state.username} onChangeText={(username) => this.setState({username})} autoCompleteType={'username'}></TextInput>
         <ScrollView>
           {this.props.photos &&
             this.props.photos.map(photo => {
