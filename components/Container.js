@@ -33,8 +33,8 @@ export default class Container extends Component {
               this.handleClick()
             }}/>
         }
-        <TextInput style={{height: 40, borderColor: 'black', borderWidth: 1, margin: 10, padding: 5}} value={this.state.text} onChangeText={(text) => this.setState({text})}></TextInput>
-        <TextInput style={{height: 20, borderColor: 'black', borderWidth: 1, margin: 20, padding: 3}} value={this.state.username} onChangeText={(username) => this.setState({username})} autoCompleteType={'username'}></TextInput>
+        <TextInput style={{height: 40, borderColor: 'black', borderWidth: 1, margin: 5, padding: 5}} value={this.state.text} onChangeText={(text) => this.setState({text})}></TextInput>
+        <TextInput style={{height: 20, borderColor: 'black', borderWidth: 1, margin: 5, padding: 3}} value={this.state.username} onChangeText={(username) => this.setState({username})} autoCompleteType={'username'}></TextInput>
         <TouchableHighlight
           style={styles.button}
           onPress={this.onPress}
@@ -92,6 +92,6 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderWidth: 5,
-    borderColor: 'white',
+    borderColor: 'white'
   },
 });
