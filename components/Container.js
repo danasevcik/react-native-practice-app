@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button, Alert, FlatList } from 'react-native';
 import Card from './Card'
 import NewComponent from './NewComponent'
 
@@ -36,7 +36,26 @@ export default class Container extends Component {
             })
           }
         </ScrollView>
-        {this.state.click ? <NewComponent photo={'https://vignette.wikia.nocookie.net/spongebob/images/d/d7/SpongeBob_stock_art.png/revision/latest?cb=20190604110949'}/> : null}
+        {this.state.click && <NewComponent photo={'https://vignette.wikia.nocookie.net/spongebob/images/d/d7/SpongeBob_stock_art.png/revision/latest?cb=20190604110949'}/>}
+        <FlatList
+          data={[
+            {key: 'THIS'},
+            {key: 'IS...'},
+            {key: 'A'},
+            {key: 'PRACTICE'},
+            {key: 'FLAT'},
+            {key: 'LIST'},
+            {key: 'WITH'},
+            {key: 'SCROLL'},
+            {key: 'WHEN'},
+            {key: 'THE'},
+            {key: 'ITEM'},
+            {key: 'IS'},
+            {key: 'IN'},
+            {key: 'SIGHT'},
+          ]}
+          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+        />
       </View>
     );
   }
@@ -48,6 +67,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'hotpink',
     height: '100%',
     width: '100%'
+  },
+  item: {
+    flex: 3,
+    padding: 20,
+    fontSize: 18,
+    height: 44,
   },
 });
 
