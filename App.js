@@ -22,23 +22,22 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
 
-        <View style={{marginTop: 22}}>
+        <View style={{marginTop: 30}}>
           <Modal
-            animationType="slide"
+            animationType="fade"
             transparent={false}
             visible={this.state.modalVisible}
             onRequestClose={() => {
               Alert.alert('Modal has been closed.');
             }}>
-            <View style={{marginTop: 22}}>
+            <View style={{marginTop: 100, alignItems: 'center', justifyContent: 'center'}}>
               <View>
-                <Text>Hello World!</Text>
-
+                <Text style={{color: 'hotpink', fontSize: 100}}>Hello World!</Text>
                 <TouchableHighlight
                   onPress={() => {
                     this.setModalVisible(!this.state.modalVisible);
                   }}>
-                  <Text>Hide Modal</Text>
+                  <Text style={{color: 'hotpink', fontSize: 50}}>Hide Modal</Text>
                 </TouchableHighlight>
               </View>
             </View>
