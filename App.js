@@ -17,7 +17,8 @@ export default class App extends Component {
   handleColorChange = () => {
     console.log('change');
     let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-
+    let number = Math.random(6)
+    console.log(number);
   }
 
   setModalVisible(visible) {
