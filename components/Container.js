@@ -35,12 +35,11 @@ export default class Container extends Component {
         }
         <TextInput style={{height: 40, borderColor: 'black', borderWidth: 1, margin: 5, padding: 5}} value={this.state.text} onChangeText={(text) => this.setState({text})}></TextInput>
         <TextInput style={{height: 20, borderColor: 'black', borderWidth: 1, margin: 5, padding: 3}} value={this.state.username} onChangeText={(username) => this.setState({username})} autoCompleteType={'username'}></TextInput>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={this.onPress}
-         >
-          <Text> Touch Here </Text>
-       </TouchableHighlight>
+
+        <TouchableHighlight style={styles.button} onPress={this.onPress}>
+          <Text> Click For Touchable Highlight </Text>
+        </TouchableHighlight>
+
         <ScrollView>
           {this.props.photos &&
             this.props.photos.map(photo => {
