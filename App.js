@@ -41,7 +41,7 @@ export default class App extends Component {
           maximumTrackTintColor="#000000"
           onSlidingComplete={this.handleColorChange}
           />
-        <View style={{marginTop: 30}}>
+        <View style={{marginTop: 10}}>
           <Modal
             animationType="fade"
             transparent={false}
@@ -56,7 +56,7 @@ export default class App extends Component {
                   onPress={() => {
                     this.setModalVisible(!this.state.modalVisible);
                   }}>
-                  <Text style={{color: 'hotpink', fontSize: 50}}>Hide Modal</Text>
+                  <Text style={{color: 'hotpink', fontSize: 30, marginTop: 30}}>Click Me To Hide Modal</Text>
                 </TouchableHighlight>
               </View>
             </View>
