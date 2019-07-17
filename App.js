@@ -7,7 +7,7 @@ export default class App extends Component {
   state = {
     photos: null,
     modalVisible: false,
-    color: 'darkorange'
+    color: 'hotpink'
   }
 
   componentDidMount() {
@@ -16,9 +16,14 @@ export default class App extends Component {
 
   handleColorChange = () => {
     console.log('change');
-    let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-    let number = Math.random(6)
+    let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'aliceblue', 'aqua', 'aquamarine', 'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgreen', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'greenyellow', 'honeydew', 'indianred', 'hotpink', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen', 'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgreen', 'lime', 'linen', 'magenta', 'maroon', 'mintcream', 'midnightblue', 'mistyrose', 'moccasin', 'navajowhite', 'navy', 'oldlace', 'olive', 'olivedrab', 'orangered', 'orchid', 'palegoldenrod', 'papayawhip', 'peachpuff', 'peru', 'pink', 'powderblue', 'plum', 'rebeccapurple', 'rosybrown', 'saddlebrown', 'skyblue', 'springgreen', 'steelblue', 'teal', 'thistle', 'tomato', 'turquoise']
+    console.log(colors.length);
+    let number = Math.floor(Math.random() * 102)
     console.log(number);
+    let pickedColor = colors[number]
+    console.log(pickedColor);
+    this.setState({color: pickedColor})
+
   }
 
   setModalVisible(visible) {
@@ -76,7 +81,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    opacity: 0.9,
+    opacity: 0.8,
     backgroundColor: 'hotpink',
     alignItems: 'center',
     justifyContent: 'center',
