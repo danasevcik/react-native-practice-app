@@ -6,11 +6,18 @@ export default class App extends Component {
 
   state = {
     photos: null,
-    modalVisible: false
+    modalVisible: false,
+    color: 'darkorange'
   }
 
   componentDidMount() {
     this.setState({photos: ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1653&q=80', 'https://images.unsplash.com/photo-1444930694458-01babf71870c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2030&q=80', 'https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1633&q=80', 'https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80', 'https://images.unsplash.com/photo-1516820208784-270b250306e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80', 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80']})
+  }
+
+  handleColorChange = () => {
+    console.log('change');
+    let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+
   }
 
   setModalVisible(visible) {
@@ -21,11 +28,12 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Slider
-            style={{width: 200, height: 40, marginTop: 20}}
-            minimumValue={0}
-            maximumValue={1}
-            minimumTrackTintColor="#FFFFFF"
-            maximumTrackTintColor="#000000"
+          style={{width: 200, height: 40, marginTop: 20}}
+          minimumValue={0}
+          maximumValue={1}
+          minimumTrackTintColor="#FFFFFF"
+          maximumTrackTintColor="#000000"
+          onSlidingComplete={this.handleColorChange}
           />
         <View style={{marginTop: 30}}>
           <Modal
@@ -57,7 +65,7 @@ export default class App extends Component {
         </View>
 
         <Text style={{color: 'white', marginTop: '6%'}}>Dana's React App</Text>
-        <Container photos={this.state.photos}/>
+        <Container photos={this.state.photos} color={this.state.color}/>
       </View>
     );
 
@@ -67,6 +75,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    opacity: 0.9,
     backgroundColor: 'hotpink',
     alignItems: 'center',
     justifyContent: 'center',

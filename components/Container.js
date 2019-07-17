@@ -28,7 +28,7 @@ export default class Container extends Component {
               this.handleClick()
             }}/>
           :
-          <Button title="CLICK ME" color="#841584" accessibilityLabel="Click to show spongebob" onPress={() => {
+          <Button title="CLICK ME" color={this.props.color} accessibilityLabel="Click to show spongebob" onPress={() => {
               Alert.alert('Look who it is!');
               this.handleClick()
             }}/>
